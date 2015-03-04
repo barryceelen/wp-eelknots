@@ -1,4 +1,4 @@
-# WP Eelknots
+# WordPress Eelknots
 
 A variation on Marc Jaquith's excellent [WordPress Skeleton](https://github.com/markjaquith/WordPress-Skeleton).
 Helpful to get a WordPress project bootstrapped quickly.
