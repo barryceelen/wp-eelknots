@@ -12,7 +12,7 @@ content/upgrade/
 # Do not track any files in this directory
 content/uploads/*
 # Except the index.php file
-content/uploads/!index.php
+!content/uploads/index.php
 
 # Sublime Text Files #
 ######################
