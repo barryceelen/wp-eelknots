@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "content/themes"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "content/plugins"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "content/mu-plugins"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "wp"
+		}
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
+}

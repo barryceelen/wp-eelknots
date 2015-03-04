@@ -1,0 +1,38 @@
+# protect wp-config.php (chmod 640/644)
+<files wp-config.php>
+Order deny,allow
+deny from all
+</files>
+
+# protect wp-config-production.php (chmod 640/644)
+<files wp-config-production.php>
+Order deny,allow
+deny from all
+</files>
+
+# protect the htaccess file (chmod 640/644)
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+# protect the dandelion revision file
+<files .revision>
+order allow,deny
+deny from all
+</files>
+
+# Redirect /login to /wp/wp-admin
+<IfModule mod_rewrite.c>
+RewriteRule ^login$ /wp/wp-admin [R=301,L]
+</IfModule>
+
+# WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>

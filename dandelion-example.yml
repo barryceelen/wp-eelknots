@@ -1,0 +1,29 @@
+adapter: sftp
+host:
+username:
+password:
+
+path: /
+exclude:
+- .gitignore
+- .sass-cache
+- *.sublime-project
+- *.sublime-workspace
+- config.rb
+- dandelion-example.yml
+- dandelion.yml
+- Gemfile
+- Gruntfile.js
+- node_modules/
+- package.json
+- README.md
+- wp/
+- wp-config-local.php
+- wp-config-local-example.php
+- wp-config-production-example.php
+
+
+
+
+
+

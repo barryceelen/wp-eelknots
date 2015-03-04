@@ -1,0 +1,52 @@
+# WP config Files #
+###################
+wp-config-local.php
+wp-config-production.php
+
+# WP upgrades #
+###############
+content/upgrade/
+
+# WP uploads #
+##############
+# Do not track any files in this directory
+content/uploads/*
+# Except the index.php file
+content/uploads/!index.php
+
+# Sublime Text Files #
+######################
+*.sublime-*
+!example.sublime-project
+
+# Dandelion #
+#############
+dandelion.yml
+
+# Grunt #
+#########
+node_modules/
+
+# JavaScript and CSS source maps #
+##################################
+*.map
+
+# SASS #
+########
+.sass-cache/
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
