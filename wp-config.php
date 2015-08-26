@@ -36,7 +36,7 @@ define('WP_SITEURL', 'http://'.$_SERVER['SERVER_NAME'].'/wp');
 
 // Todo: Change default theme name
 define('WP_DEFAULT_THEME', 'theme');
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/content');
+define('WP_CONTENT_DIR', dirname( __FILE__ ) . '/content');
 define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/content');
 define('WP_POST_REVISIONS', 3);
 define('EMPTY_TRASH_DAYS', 7);
