@@ -24,9 +24,10 @@ content/uploads/*
 #############
 dandelion.yml
 
-# Grunt #
-#########
+# Grunt and friends #
+#####################
 node_modules/
+.ruby-version
 
 # JavaScript and CSS source maps #
 ##################################
