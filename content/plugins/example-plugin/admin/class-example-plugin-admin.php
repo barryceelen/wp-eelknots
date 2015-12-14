@@ -97,7 +97,7 @@ class Example_Plugin_Admin {
 		// remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 	}
 
-	/*
+	/**
 	 * Unset default meta boxes on post/page edit forms.
 	 *
 	 * @see http://codex.wordpress.org/Function_Reference/remove_meta_box
@@ -106,7 +106,7 @@ class Example_Plugin_Admin {
 	 */
 	function remove_meta_boxes() {
 
-		/**
+		/*
 		 * Post.
 		 */
 		// remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
@@ -118,7 +118,7 @@ class Example_Plugin_Admin {
 		// remove_meta_box( 'commentsdiv', 'post', 'normal' );
 		// remove_meta_box( 'postexcerpt', 'post', 'normal' );
 
-		/**
+		/*
 		 * Page.
 		 */
 		// remove_meta_box( 'trackbacksdiv', 'page', 'normal' );
