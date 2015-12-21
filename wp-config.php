@@ -42,6 +42,7 @@ define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/content');
 define('WP_POST_REVISIONS', 3);
 define('EMPTY_TRASH_DAYS', 7);
 define('AUTOSAVE_INTERVAL', 120);
+define('CORE_UPGRADE_SKIP_NEW_BUNDLED', true);
 define('DISALLOW_FILE_EDIT', true);
 //define('DISALLOW_FILE_MODS',true);
 
