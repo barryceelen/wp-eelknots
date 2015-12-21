@@ -2,6 +2,7 @@
 if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
 	require_once( dirname( __FILE__ ) . '/wp-config-local.php' );
 	define('WP_DEBUG', true);
+	define('WP_DEBUG_LOG', true);
 	define('WP_LOCAL_DEV', true);
 	define('SCRIPT_DEBUG', true);
 	//define('SAVEQUERIES', true);
