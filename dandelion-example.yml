@@ -6,24 +6,20 @@ password:
 path: /
 exclude:
 - .gitignore
-- .sass-cache
-- *.sublime-project
-- *.sublime-workspace
+- .gitmodules
 - config.rb
 - dandelion-example.yml
 - dandelion.yml
+- example.sublime-project
+- TODO.sublime-project
+- TODO.sublime-workspace
 - Gemfile
-- Gruntfile.js
-- node_modules/
-- package.json
+- content/themes/TODO/.sass-cache/
+- content/themes/TODO/Gruntfile.js
+- content/themes/TODO/node_modules/
+- content/themes/TODO/package.json
 - README.md
 - wp/
 - wp-config-local.php
 - wp-config-local-example.php
 - wp-config-production-example.php
-
-
-
-
-
-
