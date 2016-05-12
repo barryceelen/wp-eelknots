@@ -23,6 +23,7 @@ content/uploads/*
 # Dandelion #
 #############
 dandelion.yml
+Gemfile.lock
 
 # Grunt and friends #
 #####################
