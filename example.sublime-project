@@ -3,15 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "content/themes"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "content/plugins"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "content/mu-plugins"
+			"path": "content/mu-plugins/example"
 		},
 		{
 			"follow_symlinks": true,
@@ -20,6 +12,13 @@
 	],
 	"settings":
 	{
-		"tab_size": 4
+		"tab_size": 4,
+		"phpcs":
+		{
+			"phpcs_additional_args":
+			{
+				"--standard": "phpcs.ruleset.xml"
+			}
+		}
 	}
 }
