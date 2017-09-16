@@ -1,10 +1,10 @@
 <?php
 /**
- * Todo.
+ * Contains the admin plugin class
  *
  * @package   Todo
  * @author    Todo
- * @license   GPL-2.0+
+ * @license   GPL-3.0+
  * @link      Todo
  * @copyright Todo
  */
@@ -16,7 +16,6 @@
  * @author  Todo
  */
 class Example_Plugin_Admin {
-
 	/**
 	 * Instance of this class.
 	 *
@@ -35,7 +34,7 @@ class Example_Plugin_Admin {
 
 		// Disable Welcome Screen and pointers.
 		add_action( 'wp_default_scripts', array( $this, 'remove_pointer_script' ) );
-		add_action( 'wp_default_styles',  array( $this, 'remove_pointer_style'  ) );
+		add_action( 'wp_default_styles',  array( $this, 'remove_pointer_style' ) );
 
 		// Remove dashboard widgets.
 		add_action( 'wp_dashboard_setup', array( $this, 'wp_dashboard_setup' ) );
@@ -53,8 +52,8 @@ class Example_Plugin_Admin {
 	 */
 	public static function get_instance() {
 		// If the single instance hasn't been set, set it now.
-		if ( null == self::$instance ) {
-			self::$instance = new self;
+		if ( null === self::$instance ) {
+			self::$instance = new self();
 		}
 		return self::$instance;
 	}
@@ -63,6 +62,7 @@ class Example_Plugin_Admin {
 	 * Remove WordPress admin pointer tooltips.
 	 *
 	 * @since 1.0.0
+	 * @param WP_Scripts $scripts WP_Scripts instance, passed by reference.
 	 */
 	function remove_pointer_script( $scripts ) {
 		$scripts->remove( 'wp-pointer' );
@@ -73,6 +73,7 @@ class Example_Plugin_Admin {
 	 * Remove WordPress admin pointer styles.
 	 *
 	 * @since 1.0.0
+	 * @param WP_Styles $styles WP_Styles instance, passed by reference.
 	 */
 	function remove_pointer_style( $styles ) {
 		$styles->remove( 'wp-pointer' );
@@ -86,15 +87,15 @@ class Example_Plugin_Admin {
 	 * @since 1.0.0
 	 */
 	function wp_dashboard_setup() {
+
 		remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
 		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
 		remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 		remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
 		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 		remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-		// remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-		// remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 	}
 
 	/**
@@ -106,26 +107,10 @@ class Example_Plugin_Admin {
 	 */
 	function remove_meta_boxes() {
 
-		/*
-		 * Post.
-		 */
-		// remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
-		// remove_meta_box( 'postcustom', 'post', 'normal' );
-		// remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
-		// remove_meta_box( 'authordiv', 'post', 'normal' );
-		// remove_meta_box( 'categorydiv', 'post', 'side' );
-		// remove_meta_box( 'tagsdiv-post_tag', 'post', 'side' );
-		// remove_meta_box( 'commentsdiv', 'post', 'normal' );
-		// remove_meta_box( 'postexcerpt', 'post', 'normal' );
-
-		/*
-		 * Page.
-		 */
-		// remove_meta_box( 'trackbacksdiv', 'page', 'normal' );
-		// remove_meta_box( 'postcustom', 'page', 'normal' );
-		// remove_meta_box( 'commentstatusdiv', 'page', 'normal' );
-		// remove_meta_box( 'authordiv', 'page', 'normal' );
-		// remove_meta_box( 'commentsdiv', 'page', 'normal' );
-		// remove_meta_box( 'pageparentdiv', 'page', 'side' );
+		remove_meta_box( 'postcustom', 'post', 'normal' );
+		remove_meta_box( 'postcustom', 'page', 'normal' );
 	}
 }
+
+global $example_plugin_admin;
+$example_plugin_admin = Example_Plugin_Admin::get_instance();
