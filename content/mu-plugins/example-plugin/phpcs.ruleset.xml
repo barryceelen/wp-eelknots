@@ -5,7 +5,16 @@
 		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
 		<exclude name="WordPress.VIP.RestrictedFunctions"/>
 	</rule>
-	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="example_plugin"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="example-plugin"/>
+		</properties>
+	</rule>
 	<exclude-pattern>*.min.js</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
 	<exclude-pattern>/themes/example/js/vendor/*</exclude-pattern>
