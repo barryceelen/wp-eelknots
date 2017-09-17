@@ -11,9 +11,6 @@
 
 /**
  * Example plugin admin class.
- *
- * @package Todo
- * @author  Todo
  */
 class Example_Plugin_Public {
 	/**
