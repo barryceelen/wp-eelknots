@@ -45,7 +45,7 @@ function example_plugin_load_textdomain() {
 	}
 }
 
-require_once( plugin_dir_path( __FILE__ ) . 'includes/class-example.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-example-plugin.php' );
 
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-example-plugin-admin.php' );
