@@ -50,5 +50,5 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/class-example-plugin.php' 
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-example-plugin-admin.php' );
 } else {
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-example-plugin-public.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'public/class-example-plugin-public.php' );
 }
