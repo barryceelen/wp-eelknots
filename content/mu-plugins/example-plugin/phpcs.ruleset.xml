@@ -16,7 +16,7 @@
 	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="example-plugin"/>
+			<property name="text_domain" type="array" value="example-plugin,default"/>
 		</properties>
 	</rule>
 	<rule ref="WordPress.Files.FileName">
