@@ -47,5 +47,5 @@ class Example_Plugin_Public {
 	}
 }
 
-global $example_plugin;
-$example_plugin = Example_Plugin::get_instance();
+global $example_plugin_public;
+$example_plugin_public = Example_Plugin_Public::get_instance();
