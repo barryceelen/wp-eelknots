@@ -29,9 +29,9 @@ WordPress is installed in a subfolder and the theme, plugins, uploads and other 
 
 [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards) compliance can be checked by using the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) script and installing the WordPress Coding Standards [Ruleset](https://codex.wordpress.org/WordPress_Coding_Standards).
 
-A `phpcs-ruleset.xml` file is included in the example plugin `mu-plugins/example` folder.   
+A `phpcs.ruleset.xml` file is included in the example plugin `mu-plugins/example` folder.
 
-Run `phpcs -ps . --report-file=phpcs.log --standard=phpcs.ruleset.xml --extensions=php,js` in the `mu-plugins/example` folder to check WPCS complaince on all of the plugin's PHP and JavaScript files. For reference, a `phpcs.log` error log file will be written to the plugin's folder.
+Run `phpcs --standard=phpcs.ruleset.xml --report-file=phpcs.log` in the `mu-plugins/example` folder to check WPCS complaince on all of the plugin's PHP and JavaScript files. For reference, a `phpcs.log` error log file will be written to the plugin's folder.
 
 A `grunt jshint` Grunt task is available to check against the WordPress JavaScript coding standards.
 
