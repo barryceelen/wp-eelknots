@@ -1,6 +1,6 @@
 <?php
 /**
- * Todo.
+ * Main plugin file
  *
  * @package   Todo
  * @author    Todo
@@ -17,7 +17,7 @@
  * Version: 1.0.0
  * Author URI: Todo
  * License: GPL3+
- * Text Domain: Todo
+ * Text Domain: example-plugin
  * Domain Path: /languages/
  */
 
