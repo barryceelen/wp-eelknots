@@ -30,8 +30,7 @@ class Example_Plugin_Admin {
 	private function __construct() {
 
 		// Disable Welcome Screen and pointers.
-		add_action( 'wp_default_scripts', array( $this, 'remove_pointer_script' ) );
-		add_action( 'wp_default_styles',  array( $this, 'remove_pointer_style' ) );
+		add_action( 'admin_init', array( $this, 'remove_pointers' ) );
 
 		// Remove dashboard widgets.
 		add_action( 'wp_dashboard_setup', array( $this, 'wp_dashboard_setup' ) );
@@ -59,21 +58,9 @@ class Example_Plugin_Admin {
 	 * Remove WordPress admin pointer tooltips.
 	 *
 	 * @since 1.0.0
-	 * @param WP_Scripts $scripts WP_Scripts instance, passed by reference.
 	 */
-	function remove_pointer_script( $scripts ) {
-		$scripts->remove( 'wp-pointer' );
-	}
-
-
-	/**
-	 * Remove WordPress admin pointer styles.
-	 *
-	 * @since 1.0.0
-	 * @param WP_Styles $styles WP_Styles instance, passed by reference.
-	 */
-	function remove_pointer_style( $styles ) {
-		$styles->remove( 'wp-pointer' );
+	function remove_pointers() {
+		remove_action( 'admin_enqueue_scripts', array( 'WP_Internal_Pointers', 'enqueue_scripts' ) );
 	}
 
 	/**
