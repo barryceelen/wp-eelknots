@@ -12,7 +12,7 @@
     "grunt-modernizr": "*",
     "grunt-notify": "*",
     "grunt-sass": "*",
-    "grunt-svgmin": "*",
+    "grunt-svgmin": "*"
   },
-  "dependencies": {},
+  "dependencies": {}
 }
