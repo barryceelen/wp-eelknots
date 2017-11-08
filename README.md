@@ -34,7 +34,7 @@ A `grunt jshint` Grunt task is available to check against the WordPress JavaScri
 
 ## Theme in a plugin?
 
-Usually my project code consists of a theme and a site-specific plugin. WordPress allows you to specify additional theme folders. This feature is used by the example plugin to include the theme inside the plugin folder. I find this keeps the project code nicely bundled together.
+WordPress allows you to specify additional theme folders. This feature is used by the example plugin to include the theme inside the plugin folder. Usually my WordPress project code mainly consists of a theme and a site-specific plugin. I find including the theme in the plugin keeps the project code nicely bundled together.
 
 ## Deployment
 
