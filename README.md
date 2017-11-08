@@ -3,12 +3,9 @@
 A variation on Marc Jaquith's excellent [WordPress Skeleton](https://github.com/markjaquith/WordPress-Skeleton).
 Helpful to get a WordPress project bootstrapped quickly.
 
-Usually I don't have the luxury of having git installed on the remote server.
-I like to deploy stuff via the [dandelion](https://github.com/scttnlsn/dandelion) gem. An example dandelion.yml file is included.
-
 ## Folder structure
 
-WordPress is installed in a subfolder and the theme, plugins, uploads and other data are kept in the `content` folder in the root directory. This allows you to easily update WordPress to a new version and keeps our theme and plugin files separate from WordPress core.
+WordPress is installed in a subfolder and the theme, plugins, uploads and other data are kept in the `content` folder in the root directory. This allows you to easily update WordPress to a new version and keeps your theme and plugin files separate from WordPress core.
 
 
 ```
@@ -35,4 +32,7 @@ Run `phpcs --standard=phpcs.ruleset.xml --report-file=phpcs.log` in the `mu-plug
 
 A `grunt jshint` Grunt task is available to check against the WordPress JavaScript coding standards.
 
+## Deployment
 
+Usually I don't have the luxury of having git installed on the remote server.
+I like to deploy stuff via the [dandelion](https://github.com/scttnlsn/dandelion) gem. An example dandelion.yml file is included.
