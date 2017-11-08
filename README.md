@@ -24,13 +24,17 @@ WordPress is installed in a subfolder and the theme, plugins, uploads and other 
 
 ## WordPress Coding Standards
 
-[WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards) compliance can be checked by using the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) script and installing the WordPress Coding Standards [Ruleset](https://codex.wordpress.org/WordPress_Coding_Standards).
+The included example plugin tries to adhere to the [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards). Compliance can be checked by using the [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) script and installing the WordPress Coding Standards [Ruleset](https://codex.wordpress.org/WordPress_Coding_Standards).
 
 A `phpcs.ruleset.xml` file is included in the example plugin `mu-plugins/example` folder.
 
 Run `phpcs --standard=phpcs.ruleset.xml --report-file=phpcs.log` in the `mu-plugins/example` folder to check WPCS complaince on all of the plugin's PHP and CSS files. For reference, a `phpcs.log` error log file will be written to the plugin's folder.
 
 A `grunt jshint` Grunt task is available to check against the WordPress JavaScript coding standards.
+
+## Theme in a plugin?
+
+Usually my project code consists of a theme and a site-specific plugin. WordPress allows you to specify additional theme folders. This feature is used by the example plugin to include the theme inside the plugin folder. I find this keeps the project code nicely bundled together.
 
 ## Deployment
 
