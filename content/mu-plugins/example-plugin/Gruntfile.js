@@ -165,7 +165,7 @@ module.exports = function(grunt) {
 					'**/*.js',
 					'!node_modules/**',
 				],
-				tasks: ['sass:dev','autoprefixer:dist'],
+				tasks: ['jshint'],
 				options: {
 					spawn: false
 				}
