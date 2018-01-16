@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 		jshint: {
 			options: grunt.file.readJSON( '.jshintrc' ),
 			theme: {
-				src: ['themes/example/js/_*.js']
+				src: ['<%= themepath %>js/_*.js']
 			},
 			plugin: {
 				src: [
