@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		themepath: 'content/mu-plugins/example-plugin/themes/example/',
+		pluginpath: 'content/mu-plugins/example-plugin/',
 		pkg: grunt.file.readJSON( 'package.json' ),
 		autoprefixer: {
 			/* Note: Update caniuse DB: npm update caniuse-db */
@@ -66,9 +67,8 @@ module.exports = function(grunt) {
 			},
 			plugin: {
 				src: [
-					'**/*.js',
-					'!node_modules/**',
-					'!themes/**'
+					'<%= pluginpath %>/*.js',
+					'!<%= pluginpath %>/themes/**'
 				]
 			}
 		},
