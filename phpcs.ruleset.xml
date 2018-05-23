@@ -4,7 +4,7 @@
 	<!-- PHPCS flags -->
 	<arg value="psvn"/>
 	<arg name="extensions" value="php,css"/>
-	<file>.</file>
+	<file>content/mu-plugins/example-plugin/.</file>
 	<rule ref="WordPress">
 		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
 		<exclude name="WordPress.VIP.RestrictedFunctions"/>
@@ -30,7 +30,9 @@
 		</properties>
 	</rule>
 	<exclude-pattern>*.min.js</exclude-pattern>
-	<exclude-pattern>/node_modules/*</exclude-pattern>
-	<exclude-pattern>/themes/example/js/vendor/*</exclude-pattern>
-	<exclude-pattern>/themes/example/js/public.js</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>content/mu-plugins/example-plugin/themes/example/js/vendor/*</exclude-pattern>
+	<exclude-pattern>content/mu-plugins/example-plugin/themes/example/js/public.js</exclude-pattern>
+	<exclude-pattern>content/mu-plugins/example-plugin/themes/example/style.css</exclude-pattern>
+	<exclude-pattern>content/mu-plugins/example-plugin/themes/example/editor-style.css</exclude-pattern>
 </ruleset>
