@@ -4,11 +4,11 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-autoprefixer": "*",
+    "grunt-chokidar": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
     "grunt-modernizr": "*",
     "grunt-notify": "*",
     "grunt-sass": "*",
