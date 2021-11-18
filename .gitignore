@@ -1,3 +1,7 @@
+# WP core folder #
+##################
+/wp/
+
 # WP config Files #
 ###################
 wp-config-local.php
@@ -53,3 +57,7 @@ node_modules/
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Composer vendor folder #
+##########################
+/vendor/
