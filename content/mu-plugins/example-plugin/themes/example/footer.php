@@ -2,7 +2,7 @@
 /**
  * Footer template.
  *
- * @package Example_Plugin
+ * @package Example_Theme
  */
 
 ?>
