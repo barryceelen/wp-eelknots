@@ -2,6 +2,10 @@
 ##################
 /wp/
 
+# Built assets #
+##################
+dist/
+
 # WP config Files #
 ###################
 wp-config-local.php

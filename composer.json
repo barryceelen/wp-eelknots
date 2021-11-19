@@ -33,9 +33,7 @@
 		}
 	],
 	"require": {
-		"composer/installers":"^2.0",
-		"wordpress/wordpress": "@dev",
-		"fancyguy/webroot-installer": "^1.1"
+		"wordpress/wordpress": "@dev"
 	},
 	"extra": {
 		"installer-paths": {
@@ -48,8 +46,21 @@
 			"content/plugins/{$name}": [
 				"type:wordpress-plugin"
 			]
-		},
-		"webroot-dir": "wp",
-		"webroot-package": "wordpress/wordpress"
+		}
+	},
+	"scripts": {
+		"move-wp": [
+			"rm -rf wp",
+			"mv vendor/wordpress/* wp/",
+			"rm -rf wp/.git",
+			"rm -rf wp/wp-content",
+			"rm -rf vendor"
+		],
+		"post-install-cmd": [
+			"@move-wp"
+		],
+		"post-update-cmd": [
+			"@move-wp"
+		]
 	}
 }

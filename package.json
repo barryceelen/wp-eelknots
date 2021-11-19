@@ -1,18 +1,18 @@
 {
-  "name": "example",
-  "version": "1.0.0",
-  "devDependencies": {
-    "grunt": "*",
-    "grunt-autoprefixer": "*",
-    "grunt-chokidar": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-modernizr": "*",
-    "grunt-notify": "*",
-    "grunt-sass": "*",
-    "grunt-svgmin": "*"
-  },
-  "dependencies": {}
+	"name": "example",
+	"version": "1.0.0",
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-autoprefixer": "*",
+		"grunt-chokidar": "*",
+		"grunt-contrib-concat": "*",
+		"grunt-contrib-imagemin": "*",
+		"grunt-contrib-jshint": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-modernizr": "*",
+		"grunt-notify": "*",
+		"grunt-sass": "*",
+		"grunt-svgmin": "*",
+		"sass": "*"
+	}
 }

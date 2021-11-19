@@ -13,7 +13,9 @@
  */
 
 /* global module */
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
+
+	const sass = require( 'sass' );
 
 	grunt.initConfig({
 		themepath: 'content/mu-plugins/example-plugin/themes/example/',
@@ -22,10 +24,10 @@ module.exports = function(grunt) {
 		autoprefixer: {
 			/* Note: Update caniuse DB: npm update caniuse-db */
 			options: {
-				browsers: ['last 2 version', 'ie 9', 'BlackBerry 10', 'Android 4']
+				browsers: ['last 2 version']
 			},
 			dist: {
-				src: '<%= themepath %>style.css'
+				src: '<%= themepath %>/dist/css/style.css'
 			}
 		},
 		concat: {
@@ -34,14 +36,14 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				files: {
-					'<%= themepath %>js/public.js' : [
+					'<%= themepath %>dist/js/public.js' : [
 						'<%= themepath %>js/_*.js'
 					]
 				}
 			},
 			dist: {
 				files: {
-					'<%= themepath %>js/public.js' : [
+					'<%= themepath %>dist/js/public.js' : [
 						'<%= themepath %>js/_*.js'
 					]
 				}
@@ -54,9 +56,9 @@ module.exports = function(grunt) {
 			dynamic: {
 				files: [{
 					expand: true,
-					cwd: '<%= themepath %>images/',
+					cwd: '<%= themepath %>src/images/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: '<%= themepath %>images/'
+					dest: '<%= themepath %>dist/images/'
 				}]
 			}
 		},
@@ -72,37 +74,17 @@ module.exports = function(grunt) {
 				]
 			}
 		},
-		/*
-		 * For future reference:
-		 *
-		 * modernizr: {
-		 * 	dist: {
-		 * 		'options': [
-		 * 			'setClasses',
-		 * 			'addTest'
-		 * 		],
-		 * 		'excludeTests': [
-		 * 			'hidden'
-		 * 		],
-		 * 		devFile: false,
-		 * 		dest: '<%= themepath %>js/vendor/modernizr-custom.js',
-		 * 		files: {
-		 * 			src: [
-		 * 				'<%= themepath %>js/public.js',
-		 * 				'<%= themepath %>style.css'
-		 * 			]
-		 * 		}
-		 * 	}
-		 * },
-		 */
 		sass: {
+			options: {
+				implementation: sass,
+			},
 			dev: {
 				options: {
 					outputStyle: 'expanded'
 				},
 				files: {
-					'<%= themepath %>style.css':'<%= themepath %>scss/style.scss',
-					'<%= themepath %>editor-style.css':'<%= themepath %>scss/editor-style.scss'
+					'<%= themepath %>/dist/css/style.css':'<%= themepath %>src/scss/style.scss',
+					'<%= themepath %>/dist/css/editor-style.css':'<%= themepath %>src/scss/editor-style.scss'
 				}
 			},
 			dist: {
@@ -112,8 +94,8 @@ module.exports = function(grunt) {
 					noCache: true
 				},
 				files: {
-					'<%= themepath %>style.css':'<%= themepath %>scss/style.scss',
-					'<%= themepath %>editor-style.css':'<%= themepath %>scss/editor-style.scss'
+					'<%= themepath %>dist/css/style.css':'<%= themepath %>src/scss/style.scss',
+					'<%= themepath %>dist/css/editor-style.css':'<%= themepath %>src/scss/editor-style.scss'
 				}
 			}
 		},
@@ -127,9 +109,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= themepath %>images',
+					cwd: '<%= themepath %>src/images',
 					src: ['**/*.svg'],
-					dest: '<%= themepath %>images'
+					dest: '<%= themepath %>dist/images'
 				}]
 			}
 		},
@@ -144,7 +126,7 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'<%= themepath %>js/public.min.js' : '<%= themepath %>js/public.js'
+					'<%= themepath %>dist/js/public.min.js' : '<%= themepath %>dist/js/public.js'
 				}
 			}
 		},
@@ -154,7 +136,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			sass: {
-				files: ['<%= themepath %>scss/*.scss'],
+				files: ['<%= themepath %>src/scss/*.scss'],
 				tasks: ['sass:dev','autoprefixer:dist'],
 				options: {
 					spawn: false
@@ -164,6 +146,7 @@ module.exports = function(grunt) {
 				files: [
 					'**/*.js',
 					'!node_modules/**',
+					'!dist/**',
 				],
 				tasks: ['jshint'],
 				options: {
@@ -171,7 +154,7 @@ module.exports = function(grunt) {
 				}
 			},
 			scripts: {
-				files: ['<%= themepath %>js/_*.js'],
+				files: ['<%= themepath %>src/js/_*.js'],
 				tasks: ['concat'],
 				options: {
 					spawn: false
@@ -180,20 +163,39 @@ module.exports = function(grunt) {
 		}
 	});
 
-	/* For future reference: grunt.loadNpmTasks('grunt-modernizr'); */
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-contrib-imagemin' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 
-	grunt.loadNpmTasks('grunt-chokidar');
-	grunt.registerTask('watch', ['chokidar']);
+	grunt.loadNpmTasks( 'grunt-chokidar' );
+	grunt.registerTask( 'watch', ['chokidar'] );
 
 	grunt.loadNpmTasks( 'grunt-notify' );
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-svgmin' );
 
-	grunt.registerTask('default',['sass:dist','autoprefixer','concat:dist','uglify:dist']);
-	grunt.registerTask('dist',['sass:dist','autoprefixer','jshint','concat:dist','uglify:dist','imagemin','svgmin']);
+	grunt.registerTask(
+		'default',
+		[
+			'sass:dist',
+			'autoprefixer',
+			'concat:dist',
+			'uglify:dist'
+		]
+	);
+
+	grunt.registerTask(
+		'dist',
+		[
+			'sass:dist',
+			'autoprefixer',
+			'jshint',
+			'concat:dist',
+			'uglify:dist',
+			'imagemin',
+			'svgmin'
+		]
+	);
 };
