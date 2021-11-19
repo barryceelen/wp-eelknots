@@ -1,11 +1,32 @@
 # WordPress Eelknots
 
-A variation on Marc Jaquith's excellent [WordPress Skeleton](https://github.com/markjaquith/WordPress-Skeleton).
-Helpful to get a WordPress project bootstrapped quickly.
+A variation on Marc Jaquith's excellent [WordPress Skeleton](https://github.com/markjaquith/WordPress-Skeleton). Helps getting a WordPress project bootstrapped quickly.
+
+## Installation
+
+Composer is used to install WordPress.
+
+```
+$ composer install
+```
+
+NPM installs Grunt & friends
+
+```
+$ npm install
+```
+### Build theme assets
+```
+// While developing.
+$ grunt watch
+
+// Prepare for distribution.
+$ grunt dist
+```
 
 ## Folder structure
 
-WordPress is installed in a subfolder and the theme, plugins, uploads and other data are kept in the `content` folder in the root directory. This allows you to easily update WordPress to a new version and keeps your theme and plugin files separate from WordPress core.
+WordPress is installed in a subfolder and the theme, plugins, uploads and other data are kept in the `content` folder in the root directory.
 
 
 ```
@@ -16,7 +37,7 @@ WordPress is installed in a subfolder and the theme, plugins, uploads and other 
 |   +-- uploads/ (Content is not tracked in the repository)
 |   +-- ...
 +-- wp/ (WordPress package)
-+-- wp-config-local.php (MySQL server settings for the development site)
++-- wp-config-local.php (Configuration and MySQL settings for the local development site)
 +-- wp-config-production.php (MySQL server settings for the production site)
 +-- wp-config.php (General configuration settings)
 +-- ...
@@ -38,5 +59,4 @@ WordPress allows you to specify additional theme folders. This feature is used b
 
 ## Deployment
 
-Usually I don't have the luxury of having git installed on the remote server.
-I like to deploy stuff via the [dandelion](https://github.com/scttnlsn/dandelion) gem. An example dandelion.yml file is included.
+To get up and running quickly, I like to deploy stuff using the [dandelion](https://github.com/scttnlsn/dandelion) gem. An example dandelion.yml file is included.
