@@ -2,15 +2,7 @@
 /**
  * Main plugin file
  *
- * @package   Todo
- * @author    Todo
- * @license   GPL-3.0+
- * @link      Todo
- * @copyright Todo
- */
-
-/*
- * Plugin Name: Todo
+ * Plugin Name: Example Plugin
  * Plugin URI: Todo
  * Description: Todo
  * Author: Todo
@@ -19,7 +11,11 @@
  * License: GPL3+
  * Text Domain: example-plugin
  * Domain Path: /languages/
+ *
+ * @package   Example_Plugin
  */
+
+namespace Example;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -29,14 +25,14 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'EXAMPLE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'EXAMPLE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-add_action( 'init', 'example_plugin_load_textdomain' );
+add_action( 'init', __NAMESPACE__ . '\load_textdomain' );
 
 /**
  * Load plugin textdomain.
  *
  * @since 1.0.0
  */
-function example_plugin_load_textdomain() {
+function load_textdomain() {
 
 	if ( false !== strpos( __FILE__, basename( WPMU_PLUGIN_DIR ) ) ) {
 		load_muplugin_textdomain( 'example-plugin', 'example-plugin/languages' ); // Todo: Make dir variable.
@@ -45,10 +41,10 @@ function example_plugin_load_textdomain() {
 	}
 }
 
-require_once( plugin_dir_path( __FILE__ ) . 'includes/class-example-plugin.php' );
+require_once plugin_dir_path( __FILE__ ) . 'includes/core.php';
 
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-example-plugin-admin.php' );
+	require_once plugin_dir_path( __FILE__ ) . 'admin/core.php';
 } else {
-	require_once( plugin_dir_path( __FILE__ ) . 'public/class-example-plugin-public.php' );
+	require_once plugin_dir_path( __FILE__ ) . 'public/core.php';
 }

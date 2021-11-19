@@ -2,8 +2,7 @@
 /**
  * Index template.
  *
- * @package Example_Plugin
- * @since 1.0.0
+ * @package Example_Theme
  */
 
 ?>
